@@ -8,9 +8,11 @@ var roleUpgrade = {
                 creep.moveTo(sources[0]);
             }
         }
-    if (creep.upgradeController(Game.rooms.W5N8.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        else {
+        if(creep.upgradeController(Game.rooms.W5N8.controller, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE);
             creep.moveTo(Game.rooms.W5N8.controller);
         }
+        
     }
 };
 
