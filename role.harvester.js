@@ -12,7 +12,7 @@ var roleHarvester = {
 	        creep.say(' not harvesting');
 	    }
 	    
-	    if(creep.memory.harvesting == true){
+	    if(creep.memory.harvesting){
 	        if(creep.transfer(Game.spawns.Spawn1, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
 	            creep.moveTo(Game.spawns.Spawn1);
 	            creep.say('find');
@@ -28,5 +28,4 @@ var roleHarvester = {
         }
 	}
 };
-
 module.exports = roleHarvester;
