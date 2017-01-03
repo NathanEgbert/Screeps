@@ -17,10 +17,11 @@ var autoSpawnCreeps = {
     console.log('Harvesters: ' + harvesters.length);
    
     
-    
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     console.log('Upgraders: ' + upgraders.length);
     
+    var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+    console.log('Builders: ' + builders.length);
 
     //creates harvesters
     if(harvesters.length < 3) {
@@ -31,9 +32,16 @@ var autoSpawnCreeps = {
         
     
     //creates upgraders
-    if(upgraders.length < 3) {
+    if(upgraders.length < 10) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE,MOVE], undefined, {role: 'upgrader', upgrading: false});
         console.log('Spawning new upgrader: ' + newName);
+        
+    }//end if
+    
+    //creates builders
+    if(builders.length < 5) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE,MOVE], undefined, {role: 'builder'});
+        console.log('Spawning new builder: ' + newName);
         
     }//end if
 }
