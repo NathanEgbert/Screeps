@@ -1,14 +1,31 @@
 var roleHarvester = require('role.harvester');
-var roleUpgrade = require('role.upgrade');
+var roleUpgrader = require('role.upgrader');
+var roleBuilder = require('role.builder');
+var autoSpawner = require('autoSpawnCreeps');
 
 module.exports.loop = function () {
-
+    
+    autoSpawner.run();
+    
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        //roleHarvester.run(creep);
-        roleUpgrade.run(creep);
+        var creepRole = creep.memory.role;
+        
+        switch(creepRole){
+	case 'harvester':
+		roleHarvester.run(creep);
+		creep.say(name);
+		break;
+		
+	case 'upgrader':
+		roleUpgrader.run(creep);
+		creep.say(name);
+		break;
+		
+	case 'builder':
+		roleBuilder.run(creep);
+		creep.say(name);
+		break;
+	}
     }
-
 }
-
-  
