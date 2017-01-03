@@ -23,16 +23,16 @@ var autoSpawnCreeps = {
     
 
     //creates harvesters
-    if(harvesters.length < 2) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester', harvesting: false});
+    if(harvesters.length < 3) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE,MOVE], undefined, {role: 'harvester', harvesting: false});
         console.log('Spawning new harvester: ' + newName);
         
     }//end if
         
     
     //creates upgraders
-    if(upgraders.length < 2) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: 'upgrader', upgrading: false});
+    if(upgraders.length < 3) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE,MOVE], undefined, {role: 'upgrader', upgrading: false});
         console.log('Spawning new upgrader: ' + newName);
         
     }//end if
